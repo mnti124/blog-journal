@@ -3,7 +3,14 @@
 <p><%= startingContent %> </p>
 <% posts.forEach(post => { %>
     <h1><%= post.title %> </h1>
-    <p><%= post.content.substring(0, 100) + "..."%><a href="/posts/<%= post.title %>" >Read More</a> </p>
+    <p><%= post.post.substring(0, 100) + "..."%><a href="/posts/<%= post._id %> " >Read More</a> </p>
 <%}) %>
+
+<% if(posts.length != 0){ %>
+
+    <form action="/" method="POST">
+        <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+    </form>
+<%} %> 
 
 <%- include('partials/footer'); %> 
